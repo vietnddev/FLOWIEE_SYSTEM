@@ -1,6 +1,6 @@
 package com.flowiee.pms.service.product.impl;
 
-import com.flowiee.pms.config.Core;
+import com.flowiee.pms.base.system.Core;
 import com.flowiee.pms.entity.category.Category;
 import com.flowiee.pms.entity.product.ProductDetail;
 import com.flowiee.pms.entity.product.ProductPrice;
@@ -17,7 +17,9 @@ import com.flowiee.pms.repository.product.ProductPriceRepository;
 import com.flowiee.pms.repository.sales.OrderCartRepository;
 import com.flowiee.pms.repository.system.FileStorageRepository;
 import com.flowiee.pms.service.category.CategoryService;
+import com.flowiee.pms.service.product.GenerateBarcodeService;
 import com.flowiee.pms.service.sales.CartService;
+import com.flowiee.pms.service.sales.GenerateQRCodeService;
 import com.flowiee.pms.service.storage.StorageService;
 import com.flowiee.pms.utils.ChangeLog;
 import com.flowiee.pms.utils.CoreUtils;
@@ -28,7 +30,7 @@ import com.flowiee.pms.model.dto.ProductVariantDTO;
 import com.flowiee.pms.model.dto.ProductVariantTempDTO;
 import com.flowiee.pms.repository.product.ProductDetailRepository;
 import com.flowiee.pms.repository.product.ProductDetailTempRepository;
-import com.flowiee.pms.service.BaseService;
+import com.flowiee.pms.base.service.BaseService;
 import com.flowiee.pms.service.product.ProductHistoryService;
 import com.flowiee.pms.service.product.ProductVariantService;
 import com.flowiee.pms.service.sales.TicketExportService;
@@ -36,6 +38,7 @@ import com.flowiee.pms.service.sales.TicketImportService;
 import com.flowiee.pms.utils.CommonUtils;
 import com.flowiee.pms.utils.constants.*;
 import com.flowiee.pms.utils.converter.ProductVariantConvert;
+import com.google.zxing.WriterException;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,10 +51,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.ConstraintViolationException;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -61,6 +66,7 @@ public class ProductVariantServiceImpl extends BaseService implements ProductVar
     private final ProductDetailRepository mvProductVariantRepository;
     private final ProductPriceRepository mvProductPriceRepository;
     private final FileStorageRepository mvFileStorageRepository;
+    private final GenerateQRCodeService mvGenerateQRCodeService;
     private final ProductHistoryService mvProductHistoryService;
     private final TicketImportService mvTicketImportService;
     private final TicketExportService mvTicketExportService;
@@ -70,6 +76,7 @@ public class ProductVariantServiceImpl extends BaseService implements ProductVar
     @Autowired
     @Lazy
     private CartService mvCartService;
+    private final GenerateBarcodeService mvGenerateBarcodeService;
 
     @Override
     public List<ProductVariantDTO> findAll() {
@@ -134,12 +141,27 @@ public class ProductVariantServiceImpl extends BaseService implements ProductVar
             pVariant.setSoldQty(CoreUtils.coalesce(pVariant.getSoldQty()));
             pVariant.setStorageQty(CoreUtils.coalesce(pVariant.getStorageQty()));
             pVariant.setDefectiveQty(CoreUtils.coalesce(pVariant.getDefectiveQty()));
-            pVariant.setStatus(ProductStatus.A.name());
+            pVariant.setStatus(ProductStatus.ACT);
             pVariant.setVariantCode(genProductCode(inputDTO.getVariantCode()));
+            pVariant.setSku(generateSKUCode());
             ProductDetail productDetailSaved = mvProductVariantRepository.save(pVariant);
 
             ProductPriceDTO priceDTO = inputDTO.getPrice();
             savePrice(productDetailSaved, priceDTO);
+
+            try {
+                mvGenerateQRCodeService.generateProductVariantQRCode(productDetailSaved.getId());
+            } catch (IOException | WriterException e ) {
+                e.printStackTrace();
+                logger.error(String.format("Can't generate QR Code for Product %s", productDetailSaved.getVariantCode()), e);
+            }
+
+            try {
+                mvGenerateBarcodeService.generateBarcode(productDetailSaved.getId());
+            } catch (IOException | WriterException e ) {
+                e.printStackTrace();
+                logger.error(String.format("Can't generate Barcode for Product %s", productDetailSaved.getVariantCode()), e);
+            }
 
             if (productDetailSaved.getStorageQty() > 0) {
                 Storage lvStorage = mvStorageService.findById(inputDTO.getStorageIdInitStorageQty(), true);
@@ -383,7 +405,7 @@ public class ProductVariantServiceImpl extends BaseService implements ProductVar
             throw new BadRequestException("Price must greater than zero!");
         }
         SystemConfig lvConfig = Core.mvSystemConfigList.get(ConfigCode.allowSellPriceLessThanCostPrice);
-        if (isConfigAvailable(lvConfig) && !lvConfig.isYesOption())
+        if (configAvailable(lvConfig) && !lvConfig.isYesOption())
         {
             double sellingPrice = Math.min(lvRetailPriceDiscount.doubleValue(), lvWholesalePriceDiscount.doubleValue());
             double costPrice = Math.min(lvPurchasePrice.doubleValue(), lvCostPrice.doubleValue());
@@ -414,5 +436,10 @@ public class ProductVariantServiceImpl extends BaseService implements ProductVar
                 .costPrice(lvCostPrice)
                 .state(ProductPrice.STATE_ACTIVE)
                 .build());
+    }
+
+    private String generateSKUCode() {
+        //Do something pattern
+        return UUID.randomUUID().toString();
     }
 }

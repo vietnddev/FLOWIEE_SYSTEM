@@ -3,7 +3,7 @@ package com.flowiee.pms.utils;
 import com.flowiee.pms.utils.constants.MODULE;
 import com.flowiee.pms.model.ServerInfo;
 import com.flowiee.pms.model.ShopInfo;
-import com.flowiee.pms.model.UserPrincipal;
+import com.flowiee.pms.config.UserPrincipal;
 import com.flowiee.pms.utils.constants.CategoryType;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -12,7 +12,6 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -34,7 +33,7 @@ public class CommonUtils {
     public static ServerInfo mvServerInfo;
     public static final String productID = "SMS";
     public static String defaultCountryCode = "VN";
-    public static String defaultNewPassword;
+    public static String defaultNewPassword = "123456";
 
     public static String formatToVND(Object currency) {
         @SuppressWarnings("deprecation")
@@ -85,6 +84,9 @@ public class CommonUtils {
                 case STORAGE:
                     path.append("storage");
                     break;
+                case SALES:
+                    path.append("sales");
+                    break;
                 default:
                 	path.append("system");
                 	break;
@@ -95,7 +97,7 @@ public class CommonUtils {
             File folder = new File(path.toString());
             if (!folder.exists()) {
                 if (folder.mkdirs()) {
-                    System.out.println("mkdirs OK");
+                    System.out.println("mkdirs OK " + folder.getAbsolutePath());
                 }
             }
             return path.toString();
@@ -114,6 +116,8 @@ public class CommonUtils {
                 path.append("category");
             } else if (MODULE.STORAGE.name().equals(systemModule)) {
                 path.append("storage");
+            } else if (MODULE.SALES.name().equals(systemModule)) {
+                path.append("sales");
             } else if ("data-temp".equals(systemModule)) {
                 path.append("data-temp");
             }
@@ -123,7 +127,7 @@ public class CommonUtils {
             File folder = new File(path.toString());
             if (!folder.exists()) {
                 if (folder.mkdirs()) {
-                    System.out.println("mkdirs OK");
+                    System.out.println("mkdirs OK " + folder.getAbsolutePath());
                 }
             }
             return path.toString();
@@ -164,11 +168,6 @@ public class CommonUtils {
         return cellStyle;
     }
 
-    public static String encodePassword(String pwd) {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        return bCryptPasswordEncoder.encode(pwd);
-    }
-
     public static UserPrincipal getUserPrincipal() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
@@ -186,5 +185,9 @@ public class CommonUtils {
             }
         }
         return null;
+    }
+
+    public static String getServerURL() {
+        return "http://" + CommonUtils.mvServerInfo.ip() + ":" + CommonUtils.mvServerInfo.port();
     }
 }

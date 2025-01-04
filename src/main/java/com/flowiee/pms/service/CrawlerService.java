@@ -1,5 +1,6 @@
 package com.flowiee.pms.service;
 
+import com.flowiee.pms.base.service.BaseService;
 import com.flowiee.pms.entity.category.Category;
 import com.flowiee.pms.entity.product.*;
 import com.flowiee.pms.entity.system.SystemLog;
@@ -82,7 +83,7 @@ public class CrawlerService extends BaseService {
                     .productName(CoreUtils.trim(p.getProductName()))
                     .originCountry(CoreUtils.trim(p.getOriginCountry()))
                     .isSaleOff(discountPrice.doubleValue() < originalPrice.doubleValue())
-                    .status(ProductStatus.A.name())
+                    .status(ProductStatus.ACT)
                     .build());
 
             String[] sizeList = CoreUtils.trim(p.getSize()).split("-");
@@ -114,7 +115,7 @@ public class CrawlerService extends BaseService {
                             .storageQty(100)
                             .soldQty(0)
                             .defectiveQty(0)
-                            .status(ProductStatus.A.name())
+                            .status(ProductStatus.ACT)
                             .build());
 
                     productPriceRepository.save(ProductPrice.builder()
