@@ -6,7 +6,7 @@ import com.flowiee.pms.base.entity.BaseEntity;
 
 import com.flowiee.pms.entity.sales.Customer;
 import com.flowiee.pms.entity.sales.Order;
-import com.flowiee.pms.utils.constants.AccountStatus;
+import com.flowiee.pms.utilities.enums.AccountStatus;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.util.Assert;

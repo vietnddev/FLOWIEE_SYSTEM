@@ -2,9 +2,9 @@ package com.flowiee.pms.base.auth;
 
 import com.flowiee.pms.exception.AuthenticationException;
 import com.flowiee.pms.exception.ForbiddenException;
-import com.flowiee.pms.utils.AppConstants;
-import com.flowiee.pms.utils.CommonUtils;
-import com.flowiee.pms.utils.constants.ACTION;
+import com.flowiee.pms.utilities.constants.Constants;
+import com.flowiee.pms.utilities.CommonUtils;
+import com.flowiee.pms.utilities.enums.ACTION;
 import lombok.SneakyThrows;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,7 +32,7 @@ public class BaseAuthorize {
     
     protected boolean isAuthorized(ACTION action, boolean throwException) {
         if (isAuthenticated()) {
-            if (AppConstants.ADMINISTRATOR.equals(CommonUtils.getUserPrincipal().getUsername())) {
+            if (Constants.ADMINISTRATOR.equals(CommonUtils.getUserPrincipal().getUsername())) {
                 return true;
             }
             String actionName = action.name();

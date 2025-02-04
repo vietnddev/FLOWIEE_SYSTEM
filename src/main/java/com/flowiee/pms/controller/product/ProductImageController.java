@@ -10,7 +10,7 @@ import com.flowiee.pms.service.product.ProductImageService;
 import com.flowiee.pms.service.product.ProductInfoService;
 import com.flowiee.pms.service.product.ProductVariantService;
 import com.flowiee.pms.service.system.FileStorageService;
-import com.flowiee.pms.utils.constants.ErrorCode;
+import com.flowiee.pms.utilities.enums.ErrorCode;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AccessLevel;

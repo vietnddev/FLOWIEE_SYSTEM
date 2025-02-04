@@ -1,8 +1,8 @@
 package com.flowiee.pms.base.controller;
 
 import com.flowiee.pms.model.AppResponse;
-import com.flowiee.pms.utils.CommonUtils;
-import com.flowiee.pms.utils.constants.CategoryType;
+import com.flowiee.pms.utilities.CommonUtils;
+import com.flowiee.pms.utilities.enums.CategoryType;
 import com.flowiee.pms.base.auth.BaseAuthorize;
 import lombok.Getter;
 import lombok.Setter;

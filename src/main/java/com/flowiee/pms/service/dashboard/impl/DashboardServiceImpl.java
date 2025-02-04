@@ -10,8 +10,8 @@ import com.flowiee.pms.service.dashboard.DashboardService;
 
 import com.flowiee.pms.service.sales.OrderReadService;
 import com.flowiee.pms.service.sales.OrderStatisticsService;
-import com.flowiee.pms.utils.CommonUtils;
-import com.flowiee.pms.utils.CoreUtils;
+import com.flowiee.pms.utilities.CommonUtils;
+import com.flowiee.pms.utilities.CoreUtils;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

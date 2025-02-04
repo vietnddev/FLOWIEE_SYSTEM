@@ -11,7 +11,7 @@ import com.flowiee.pms.entity.sales.Supplier;
 import com.flowiee.pms.entity.sales.GarmentFactory;
 import com.flowiee.pms.entity.category.Category;
 import com.flowiee.pms.entity.system.FileStorage;
-import com.flowiee.pms.utils.constants.ProductStatus;
+import com.flowiee.pms.utilities.enums.ProductStatus;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.OnDelete;

@@ -7,7 +7,7 @@ import com.flowiee.pms.base.entity.BaseEntity;
 import com.flowiee.pms.entity.product.ProductVariantExim;
 import com.flowiee.pms.entity.storage.Storage;
 import com.flowiee.pms.entity.system.FileStorage;
-import com.flowiee.pms.utils.constants.TicketExportStatus;
+import com.flowiee.pms.utilities.enums.TicketExportStatus;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

@@ -2,7 +2,7 @@ package com.flowiee.pms.controller.system;
 
 import com.flowiee.pms.base.controller.BaseController;
 import com.flowiee.pms.service.system.ResetPasswordService;
-import com.flowiee.pms.utils.constants.Pages;
+import com.flowiee.pms.utilities.enums.Pages;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.ui.Model;

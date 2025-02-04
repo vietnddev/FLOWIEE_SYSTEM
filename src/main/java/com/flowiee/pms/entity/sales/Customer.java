@@ -8,7 +8,7 @@ import com.flowiee.pms.entity.category.Category;
 import com.flowiee.pms.entity.product.ProductReview;
 import com.flowiee.pms.model.dto.CustomerDTO;
 
-import com.flowiee.pms.utils.constants.ContactType;
+import com.flowiee.pms.utilities.enums.ContactType;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.OnDelete;

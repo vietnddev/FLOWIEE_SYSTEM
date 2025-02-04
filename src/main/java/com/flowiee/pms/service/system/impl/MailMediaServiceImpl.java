@@ -6,9 +6,9 @@ import com.flowiee.pms.entity.system.MailMedia;
 import com.flowiee.pms.repository.system.MailMediaRepository;
 import com.flowiee.pms.base.service.BaseService;
 import com.flowiee.pms.service.system.MailMediaService;
-import com.flowiee.pms.utils.CoreUtils;
-import com.flowiee.pms.utils.SendMailUtils;
-import com.flowiee.pms.utils.constants.NotificationType;
+import com.flowiee.pms.utilities.CoreUtils;
+import com.flowiee.pms.utilities.SendMailUtils;
+import com.flowiee.pms.utilities.enums.NotificationType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,7 @@
 package com.flowiee.pms.model.payload;
 
 import com.flowiee.pms.model.dto.OrderDTO;
-import com.flowiee.pms.utils.CoreUtils;
-import com.flowiee.pms.utils.constants.OrderStatus;
+import com.flowiee.pms.utilities.enums.OrderStatus;
 import lombok.Data;
 
 import java.math.BigDecimal;

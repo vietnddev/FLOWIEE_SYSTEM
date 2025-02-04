@@ -4,8 +4,9 @@ import com.flowiee.pms.entity.system.SystemLog;
 import com.flowiee.pms.exception.*;
 import com.flowiee.pms.entity.system.Account;
 import com.flowiee.pms.entity.system.AccountRole;
-import com.flowiee.pms.utils.*;
-import com.flowiee.pms.utils.constants.*;
+import com.flowiee.pms.utilities.*;
+import com.flowiee.pms.utilities.constants.Constants;
+import com.flowiee.pms.utilities.enums.*;
 import com.flowiee.pms.config.UserPrincipal;
 import com.flowiee.pms.repository.system.AccountRepository;
 import com.flowiee.pms.repository.system.SystemLogRepository;
@@ -121,7 +122,7 @@ public class UserDetailsServiceImpl extends BaseService implements UserDetailsSe
 		if (mvAccountRepository.findByEmail(email) != null)
 			throw new DataExistsException(String.format("Email %s existed!", email));
 
-		account.setRole(AppConstants.ADMINISTRATOR.equals(lvRole) ? "ADMIN" : "USER");
+		account.setRole(Constants.ADMINISTRATOR.equals(lvRole) ? "ADMIN" : "USER");
 		account.setPassword(PasswordUtils.encodePassword(lvPassword));
 		Account accountSaved = mvAccountRepository.save(account);
 
@@ -143,7 +144,7 @@ public class UserDetailsServiceImpl extends BaseService implements UserDetailsSe
 		accountOpt.setAddress(account.getAddress());
 		accountOpt.setGroupAccount(account.getGroupAccount());
 		accountOpt.setBranch(account.getBranch());
-		accountOpt.setRole(AppConstants.ADMINISTRATOR.equals(account.getRole()) ? "ADMIN" : "USER");
+		accountOpt.setRole(Constants.ADMINISTRATOR.equals(account.getRole()) ? "ADMIN" : "USER");
 
 		Account accountUpdated = mvAccountRepository.save(accountOpt);
 

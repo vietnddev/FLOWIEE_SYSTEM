@@ -8,7 +8,7 @@ import com.flowiee.pms.model.AppResponse;
 import com.flowiee.pms.model.role.RoleModel;
 import com.flowiee.pms.service.system.GroupAccountService;
 import com.flowiee.pms.service.system.RoleService;
-import com.flowiee.pms.utils.constants.ErrorCode;
+import com.flowiee.pms.utilities.enums.ErrorCode;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AccessLevel;

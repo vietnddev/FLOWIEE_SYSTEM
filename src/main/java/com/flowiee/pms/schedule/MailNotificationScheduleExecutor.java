@@ -6,7 +6,7 @@ import com.flowiee.pms.exception.AppException;
 import com.flowiee.pms.repository.system.MailMediaRepository;
 import com.flowiee.pms.repository.system.MailStatusRepository;
 import com.flowiee.pms.service.system.SendMailService;
-import com.flowiee.pms.utils.constants.ScheduleTask;
+import com.flowiee.pms.utilities.enums.ScheduleTask;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

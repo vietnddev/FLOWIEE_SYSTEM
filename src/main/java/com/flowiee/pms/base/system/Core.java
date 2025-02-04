@@ -16,8 +16,8 @@ import com.flowiee.pms.repository.system.BranchRepository;
 import com.flowiee.pms.repository.system.ConfigRepository;
 import com.flowiee.pms.repository.system.GroupAccountRepository;
 import com.flowiee.pms.service.system.*;
-import com.flowiee.pms.utils.AppConstants;
-import com.flowiee.pms.utils.CommonUtils;
+import com.flowiee.pms.utilities.constants.Constants;
+import com.flowiee.pms.utilities.CommonUtils;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -32,12 +32,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.flowiee.pms.utils.FileUtils;
-import com.flowiee.pms.utils.PasswordUtils;
-import com.flowiee.pms.utils.constants.AccountStatus;
-import com.flowiee.pms.utils.constants.ConfigCode;
-import com.flowiee.pms.utils.constants.EndPoint;
-import com.flowiee.pms.utils.constants.NotificationType;
+import com.flowiee.pms.utilities.FileUtils;
+import com.flowiee.pms.utilities.PasswordUtils;
+import com.flowiee.pms.utilities.enums.AccountStatus;
+import com.flowiee.pms.utilities.enums.ConfigCode;
+import com.flowiee.pms.utilities.enums.EndPoint;
+import com.flowiee.pms.utilities.enums.NotificationType;
 import com.opencsv.*;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -221,7 +221,7 @@ public class Core {
 		GroupAccount groupStaffSaved = mvGroupAccountRepository.save(groupAccountStaff);
 		//Init admin account
 		Account adminAccount = Account.builder()
-			.username(AppConstants.ADMINISTRATOR)
+			.username(Constants.ADMINISTRATOR)
 			.password(PasswordUtils.encodePassword(CommonUtils.defaultNewPassword))
 			.fullName("Administrator").sex(true)
 			.role("ADMIN")

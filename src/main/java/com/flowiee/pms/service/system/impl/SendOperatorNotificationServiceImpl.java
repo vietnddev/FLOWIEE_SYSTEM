@@ -6,8 +6,8 @@ import com.flowiee.pms.entity.system.Account;
 import com.flowiee.pms.repository.system.AccountRepository;
 import com.flowiee.pms.service.system.MailMediaService;
 import com.flowiee.pms.service.system.SendOperatorNotificationService;
-import com.flowiee.pms.utils.AppConstants;
-import com.flowiee.pms.utils.constants.NotificationType;
+import com.flowiee.pms.utilities.constants.Constants;
+import com.flowiee.pms.utilities.enums.NotificationType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class SendOperatorNotificationServiceImpl extends BaseService implements 
 
     @Override
     public void notifyWarningLowStock(ProductDetail pProductDetail) {
-        Account lvAdmin = mvAccountRepository.findByUsername(AppConstants.ADMINISTRATOR);
+        Account lvAdmin = mvAccountRepository.findByUsername(Constants.ADMINISTRATOR);
         if (lvAdmin == null)
             return;
 

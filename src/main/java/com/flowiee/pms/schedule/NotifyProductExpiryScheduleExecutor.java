@@ -8,10 +8,10 @@ import com.flowiee.pms.repository.product.ProductDetailRepository;
 import com.flowiee.pms.repository.system.AccountRepository;
 import com.flowiee.pms.repository.system.ConfigRepository;
 import com.flowiee.pms.service.system.MailMediaService;
-import com.flowiee.pms.utils.AppConstants;
-import com.flowiee.pms.utils.constants.ConfigCode;
-import com.flowiee.pms.utils.constants.NotificationType;
-import com.flowiee.pms.utils.constants.ScheduleTask;
+import com.flowiee.pms.utilities.constants.Constants;
+import com.flowiee.pms.utilities.enums.ConfigCode;
+import com.flowiee.pms.utilities.enums.NotificationType;
+import com.flowiee.pms.utilities.enums.ScheduleTask;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -75,7 +75,7 @@ public class NotifyProductExpiryScheduleExecutor extends ScheduleExecutor {
             lvRowsBuilder.append(lvRowBuilder.toString());
             lvRowBuilder.setLength(0);
         }
-        String lvEmailDestination = accountRepository.findByUsername(AppConstants.ADMINISTRATOR).getEmail();
+        String lvEmailDestination = accountRepository.findByUsername(Constants.ADMINISTRATOR).getEmail();
         String lvExpiryDate = pExpiryDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         String lvShortDescription = pExpired ? String.format("Danh sách sản phẩm đã hết hạn sử dụng từ ngày %s:", lvExpiryDate)
                 : String.format("Danh sách sản phẩm sắp hết hạn sử dụng vào ngày %s:", lvExpiryDate);

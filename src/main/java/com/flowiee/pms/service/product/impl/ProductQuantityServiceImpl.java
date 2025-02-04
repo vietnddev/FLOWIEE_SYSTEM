@@ -6,7 +6,7 @@ import com.flowiee.pms.exception.AppException;
 import com.flowiee.pms.exception.BadRequestException;
 import com.flowiee.pms.service.system.ConfigService;
 import com.flowiee.pms.service.system.SendOperatorNotificationService;
-import com.flowiee.pms.utils.constants.*;
+import com.flowiee.pms.utilities.enums.*;
 import com.flowiee.pms.repository.product.ProductDetailRepository;
 import com.flowiee.pms.base.service.BaseService;
 import com.flowiee.pms.service.product.ProductQuantityService;

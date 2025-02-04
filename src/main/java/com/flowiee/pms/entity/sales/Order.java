@@ -7,8 +7,8 @@ import com.flowiee.pms.base.entity.BaseEntity;
 import com.flowiee.pms.entity.category.Category;
 import com.flowiee.pms.entity.system.Account;
 import com.flowiee.pms.entity.system.FileStorage;
-import com.flowiee.pms.utils.constants.OrderStatus;
-import com.flowiee.pms.utils.constants.PriorityLevel;
+import com.flowiee.pms.utilities.enums.OrderStatus;
+import com.flowiee.pms.utilities.enums.PriorityLevel;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

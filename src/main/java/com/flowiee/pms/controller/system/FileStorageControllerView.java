@@ -7,7 +7,7 @@ import com.flowiee.pms.service.sales.TicketExportService;
 import com.flowiee.pms.service.sales.TicketImportService;
 import com.flowiee.pms.service.system.FileStorageService;
 
-import com.flowiee.pms.utils.FileUtils;
+import com.flowiee.pms.utilities.FileUtils;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

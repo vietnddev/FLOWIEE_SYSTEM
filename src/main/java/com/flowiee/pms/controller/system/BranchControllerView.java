@@ -2,7 +2,7 @@ package com.flowiee.pms.controller.system;
 
 import com.flowiee.pms.base.controller.BaseController;
 import com.flowiee.pms.service.system.BranchService;
-import com.flowiee.pms.utils.constants.Pages;
+import com.flowiee.pms.utilities.enums.Pages;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

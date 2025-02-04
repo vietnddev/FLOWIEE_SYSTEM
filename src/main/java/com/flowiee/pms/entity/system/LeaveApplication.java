@@ -3,7 +3,7 @@ package com.flowiee.pms.entity.system;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flowiee.pms.base.entity.BaseEntity;
 import com.flowiee.pms.entity.category.Category;
-import com.flowiee.pms.utils.constants.LeaveStatus;
+import com.flowiee.pms.utilities.enums.LeaveStatus;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

@@ -9,9 +9,9 @@ import com.flowiee.pms.service.sales.*;
 import com.flowiee.pms.base.controller.BaseController;
 import com.flowiee.pms.service.category.CategoryService;
 
-import com.flowiee.pms.utils.constants.CategoryType;
-import com.flowiee.pms.utils.constants.OrderStatus;
-import com.flowiee.pms.utils.constants.Pages;
+import com.flowiee.pms.utilities.enums.CategoryType;
+import com.flowiee.pms.utilities.enums.OrderStatus;
+import com.flowiee.pms.utilities.enums.Pages;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

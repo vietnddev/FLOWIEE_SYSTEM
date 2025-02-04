@@ -6,7 +6,7 @@ import com.flowiee.pms.base.entity.BaseEntity;
 
 import com.flowiee.pms.entity.category.Category;
 import com.flowiee.pms.entity.system.FileStorage;
-import com.flowiee.pms.utils.constants.ProductStatus;
+import com.flowiee.pms.utilities.enums.ProductStatus;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.OnDelete;
@@ -172,15 +172,15 @@ public class Product extends BaseEntity implements Serializable {
     }
 
     public boolean isClothes() {
-        return com.flowiee.pms.utils.constants.PID.CLOTHES.getId().equals(PID);
+        return com.flowiee.pms.utilities.enums.PID.CLOTHES.getId().equals(PID);
     }
 
     public boolean isFruit() {
-        return com.flowiee.pms.utils.constants.PID.FRUIT.getId().equals(PID);
+        return com.flowiee.pms.utilities.enums.PID.FRUIT.getId().equals(PID);
     }
 
     public boolean isSouvenir() {
-        return com.flowiee.pms.utils.constants.PID.SOUVENIR.getId().equals(PID);
+        return com.flowiee.pms.utilities.enums.PID.SOUVENIR.getId().equals(PID);
     }
 
 	@Override

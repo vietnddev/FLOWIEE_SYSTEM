@@ -3,7 +3,7 @@ package com.flowiee.pms.controller.storage;
 import com.flowiee.pms.base.controller.BaseController;
 import com.flowiee.pms.model.dto.StorageDTO;
 import com.flowiee.pms.service.storage.StorageService;
-import com.flowiee.pms.utils.constants.Pages;
+import com.flowiee.pms.utilities.enums.Pages;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

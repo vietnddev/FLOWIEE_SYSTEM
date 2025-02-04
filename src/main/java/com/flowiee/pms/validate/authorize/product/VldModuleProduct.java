@@ -1,7 +1,7 @@
 package com.flowiee.pms.validate.authorize.product;
 
 import com.flowiee.pms.base.auth.BaseAuthorize;
-import com.flowiee.pms.utils.constants.ACTION;
+import com.flowiee.pms.utilities.enums.ACTION;
 import org.springframework.stereotype.Component;
 
 @Component

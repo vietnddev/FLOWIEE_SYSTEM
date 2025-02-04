@@ -4,7 +4,7 @@ import com.flowiee.pms.base.controller.BaseController;
 import com.flowiee.pms.model.dto.FileDTO;
 import com.flowiee.pms.service.product.ProductImageService;
 import com.flowiee.pms.service.product.ProductInfoService;
-import com.flowiee.pms.utils.constants.Pages;
+import com.flowiee.pms.utilities.enums.Pages;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

@@ -1,8 +1,7 @@
 package com.flowiee.pms.config;
 
 import com.flowiee.pms.entity.system.Account;
-import com.flowiee.pms.utils.AppConstants;
-import lombok.AccessLevel;
+import com.flowiee.pms.utilities.constants.Constants;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -99,6 +98,6 @@ public class UserPrincipal extends Account implements UserDetails {
     }
 
     public boolean isAdmin() {
-        return AppConstants.ADMINISTRATOR.equals(this.username);
+        return Constants.ADMINISTRATOR.equals(this.username);
     }
 }

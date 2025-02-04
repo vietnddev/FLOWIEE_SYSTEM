@@ -5,7 +5,7 @@ import com.flowiee.pms.exception.EntityNotFoundException;
 import com.flowiee.pms.repository.product.GiftCatalogRepository;
 import com.flowiee.pms.base.service.BaseService;
 import com.flowiee.pms.service.product.GiftCatalogService;
-import com.flowiee.pms.utils.constants.MessageCode;
+import com.flowiee.pms.utilities.enums.MessageCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

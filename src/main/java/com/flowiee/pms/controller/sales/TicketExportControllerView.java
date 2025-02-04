@@ -2,9 +2,9 @@ package com.flowiee.pms.controller.sales;
 
 import com.flowiee.pms.base.controller.BaseController;
 import com.flowiee.pms.entity.sales.TicketExport;
-import com.flowiee.pms.utils.constants.Pages;
+import com.flowiee.pms.utilities.enums.Pages;
 import com.flowiee.pms.service.sales.TicketExportService;
-import com.flowiee.pms.utils.constants.TicketExportStatus;
+import com.flowiee.pms.utilities.enums.TicketExportStatus;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

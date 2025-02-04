@@ -4,7 +4,7 @@ import com.flowiee.pms.model.ProductHeld;
 import com.flowiee.pms.base.service.BaseCurdService;
 import com.flowiee.pms.model.dto.ProductDTO;
 import com.flowiee.pms.entity.product.Product;
-import com.flowiee.pms.utils.constants.PID;
+import com.flowiee.pms.utilities.enums.PID;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

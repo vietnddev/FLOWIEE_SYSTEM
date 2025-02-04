@@ -2,16 +2,16 @@ package com.flowiee.pms.service.product.impl;
 
 import com.flowiee.pms.entity.product.Material;
 import com.flowiee.pms.exception.EntityNotFoundException;
-import com.flowiee.pms.utils.ChangeLog;
-import com.flowiee.pms.utils.constants.ACTION;
-import com.flowiee.pms.utils.constants.MODULE;
+import com.flowiee.pms.utilities.ChangeLog;
+import com.flowiee.pms.utilities.enums.ACTION;
+import com.flowiee.pms.utilities.enums.MODULE;
 import com.flowiee.pms.repository.product.MaterialRepository;
 import com.flowiee.pms.base.service.BaseService;
 import com.flowiee.pms.service.product.MaterialHistoryService;
 import com.flowiee.pms.service.product.MaterialService;
 
-import com.flowiee.pms.utils.constants.MasterObject;
-import com.flowiee.pms.utils.constants.MessageCode;
+import com.flowiee.pms.utilities.enums.MasterObject;
+import com.flowiee.pms.utilities.enums.MessageCode;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

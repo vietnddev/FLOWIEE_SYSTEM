@@ -1,6 +1,6 @@
 package com.flowiee.pms.service.system;
 
-import com.flowiee.pms.utils.constants.NotificationType;
+import com.flowiee.pms.utilities.enums.NotificationType;
 
 import java.util.Map;
 

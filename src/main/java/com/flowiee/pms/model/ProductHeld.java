@@ -1,6 +1,6 @@
 package com.flowiee.pms.model;
 
-import com.flowiee.pms.utils.constants.OrderStatus;
+import com.flowiee.pms.utilities.enums.OrderStatus;
 import lombok.Builder;
 import lombok.Data;
 

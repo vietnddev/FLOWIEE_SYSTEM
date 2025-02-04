@@ -13,14 +13,13 @@ import com.flowiee.pms.service.ExportService;
 import com.flowiee.pms.service.sales.OrderPayService;
 import com.flowiee.pms.service.sales.OrderReadService;
 import com.flowiee.pms.service.sales.OrderWriteService;
-import com.flowiee.pms.utils.constants.ErrorCode;
-import com.flowiee.pms.utils.constants.OrderStatus;
-import com.flowiee.pms.utils.constants.TemplateExport;
+import com.flowiee.pms.utilities.constants.Constants;
+import com.flowiee.pms.utilities.enums.ErrorCode;
+import com.flowiee.pms.utilities.enums.OrderStatus;
+import com.flowiee.pms.utilities.enums.TemplateExport;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
 import lombok.experimental.NonFinal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -39,16 +38,15 @@ import java.util.List;
 @RestController
 @RequestMapping("${app.api.prefix}/order")
 @Tag(name = "Order API", description = "Quản lý đơn hàng")
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
 public class OrderController extends BaseController {
-    OrderReadService mvOrderReadService;
-    OrderWriteService mvOrderWriteService;
+    private final OrderReadService mvOrderReadService;
+    private final OrderWriteService mvOrderWriteService;
+    private final OrderPayService mvOrderPayService;
     @Autowired
     @NonFinal
     @Qualifier("orderExportServiceImpl")
-    ExportService mvExportService;
-    OrderPayService mvOrderPayService;
+    private ExportService mvExportService;
 
     @Operation(summary = "Find all orders")
     @GetMapping("/all")
@@ -63,8 +61,8 @@ public class OrderController extends BaseController {
                                                      @RequestParam(value = "branchId", required = false) Long pBranchId,
                                                      @RequestParam(value = "dateFilter", required = false) String pDateFilter,
                                                      @RequestParam(value = "txtSearch", required = false) String pTxtSearch,
-                                                     @RequestParam("pageSize") int pageSize,
-                                                     @RequestParam("pageNum") int pageNum) {
+                                                     @RequestParam(name = Constants.PAGE_SIZE, required = false, defaultValue = Constants.DEFAULT_PSIZE) int pageSize,
+                                                     @RequestParam(name = Constants.PAGE_NUM, required = false, defaultValue = Constants.DEFAULT_PNUM) int pageNum) {
         try {
             Page<Order> orderPage = mvOrderReadService.findAll(pageSize, pageNum - 1, pTxtSearch, pOrderId, pPaymentMethodId, pOrderStatus, pSalesChannelId, pSellerId, pCustomerId, pBranchId, pGroupCustomerId, pDateFilter, null, null, null);
             return success(OrderDTO.fromOrders(orderPage.getContent()), pageNum, pageSize, orderPage.getTotalPages(), orderPage.getTotalElements());

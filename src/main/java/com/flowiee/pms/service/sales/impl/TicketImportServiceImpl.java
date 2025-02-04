@@ -18,7 +18,7 @@ import com.flowiee.pms.exception.ResourceNotFoundException;
 import com.flowiee.pms.repository.product.ProductDetailRepository;
 import com.flowiee.pms.repository.sales.OrderRepository;
 import com.flowiee.pms.repository.storage.StorageRepository;
-import com.flowiee.pms.utils.constants.*;
+import com.flowiee.pms.utilities.enums.*;
 import com.flowiee.pms.model.dto.TicketImportDTO;
 import com.flowiee.pms.repository.sales.MaterialTempRepository;
 import com.flowiee.pms.repository.product.ProductDetailTempRepository;
@@ -29,7 +29,7 @@ import com.flowiee.pms.service.system.AccountService;
 import com.flowiee.pms.service.system.GroupAccountService;
 import com.flowiee.pms.service.system.NotificationService;
 import com.flowiee.pms.service.system.RoleService;
-import com.flowiee.pms.utils.CommonUtils;
+import com.flowiee.pms.utilities.CommonUtils;
 import com.flowiee.pms.repository.sales.TicketImportRepository;
 import com.flowiee.pms.service.sales.TicketImportService;
 

@@ -8,7 +8,7 @@ import com.flowiee.pms.exception.AppException;
 import com.flowiee.pms.exception.BadRequestException;
 import com.flowiee.pms.exception.EntityNotFoundException;
 import com.flowiee.pms.model.payload.CartItemsReq;
-import com.flowiee.pms.utils.constants.*;
+import com.flowiee.pms.utilities.enums.*;
 import com.flowiee.pms.model.dto.ProductVariantDTO;
 import com.flowiee.pms.repository.sales.CartItemsRepository;
 import com.flowiee.pms.repository.sales.OrderCartRepository;

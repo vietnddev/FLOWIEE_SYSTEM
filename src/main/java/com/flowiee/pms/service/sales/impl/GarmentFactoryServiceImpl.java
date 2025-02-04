@@ -7,7 +7,7 @@ import com.flowiee.pms.repository.sales.GarmentFactoryRepository;
 import com.flowiee.pms.base.service.BaseService;
 import com.flowiee.pms.service.sales.GarmentFactoryService;
 
-import com.flowiee.pms.utils.constants.MessageCode;
+import com.flowiee.pms.utilities.enums.MessageCode;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

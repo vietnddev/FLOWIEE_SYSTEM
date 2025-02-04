@@ -2,7 +2,7 @@ package com.flowiee.pms.repository.sales;
 
 import com.flowiee.pms.entity.sales.Order;
 
-import com.flowiee.pms.utils.constants.OrderStatus;
+import com.flowiee.pms.utilities.enums.OrderStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -2,7 +2,7 @@ package com.flowiee.pms.base.controller;
 
 import com.flowiee.pms.entity.system.EventLog;
 import com.flowiee.pms.repository.system.EventLogRepository;
-import com.flowiee.pms.utils.CommonUtils;
+import com.flowiee.pms.utilities.CommonUtils;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

@@ -5,10 +5,10 @@ import com.flowiee.pms.entity.product.ProductDetail;
 import com.flowiee.pms.entity.sales.Order;
 import com.flowiee.pms.entity.system.Account;
 import com.flowiee.pms.entity.system.FileStorage;
-import com.flowiee.pms.utils.CommonUtils;
-import com.flowiee.pms.utils.FileUtils;
-import com.flowiee.pms.utils.constants.FileExtension;
-import com.flowiee.pms.utils.constants.MODULE;
+import com.flowiee.pms.utilities.CommonUtils;
+import com.flowiee.pms.utilities.FileUtils;
+import com.flowiee.pms.utilities.enums.FileExtension;
+import com.flowiee.pms.utilities.enums.MODULE;
 import org.springframework.stereotype.Component;
 
 @Component

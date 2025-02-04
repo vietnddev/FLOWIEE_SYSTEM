@@ -4,13 +4,13 @@ import com.flowiee.pms.base.controller.BaseController;
 import com.flowiee.pms.model.dto.CustomerDTO;
 import com.flowiee.pms.entity.sales.CustomerContact;
 import com.flowiee.pms.service.sales.CustomerContactService;
-import com.flowiee.pms.utils.*;
+import com.flowiee.pms.utilities.*;
 import com.flowiee.pms.exception.ResourceNotFoundException;
 import com.flowiee.pms.service.sales.CustomerService;
 import com.flowiee.pms.service.sales.OrderReadService;
 
-import com.flowiee.pms.utils.constants.ContactType;
-import com.flowiee.pms.utils.constants.Pages;
+import com.flowiee.pms.utilities.enums.ContactType;
+import com.flowiee.pms.utilities.enums.Pages;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

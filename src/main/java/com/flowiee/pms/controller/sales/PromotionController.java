@@ -4,11 +4,10 @@ import com.flowiee.pms.base.controller.BaseController;
 import com.flowiee.pms.entity.sales.PromotionInfo;
 import com.flowiee.pms.exception.AppException;
 import com.flowiee.pms.model.AppResponse;
-import com.flowiee.pms.model.dto.ProductDTO;
 import com.flowiee.pms.model.dto.PromotionInfoDTO;
 import com.flowiee.pms.model.payload.CreatePromotionReq;
 import com.flowiee.pms.service.sales.PromotionService;
-import com.flowiee.pms.utils.constants.ErrorCode;
+import com.flowiee.pms.utilities.enums.ErrorCode;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AccessLevel;
@@ -18,9 +17,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @RestController

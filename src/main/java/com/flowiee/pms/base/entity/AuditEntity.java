@@ -2,7 +2,7 @@ package com.flowiee.pms.base.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.flowiee.pms.utils.CommonUtils;
+import com.flowiee.pms.utilities.CommonUtils;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

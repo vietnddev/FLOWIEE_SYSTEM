@@ -8,8 +8,8 @@ import com.flowiee.pms.entity.product.*;
 import com.flowiee.pms.entity.sales.Order;
 import com.flowiee.pms.entity.sales.TicketExport;
 import com.flowiee.pms.entity.sales.TicketImport;
-import com.flowiee.pms.utils.CommonUtils;
-import com.flowiee.pms.utils.FileUtils;
+import com.flowiee.pms.utilities.CommonUtils;
+import com.flowiee.pms.utilities.FileUtils;
 import lombok.*;
 
 import lombok.experimental.FieldDefaults;

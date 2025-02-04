@@ -2,7 +2,7 @@ package com.flowiee.pms.entity.sales;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.flowiee.pms.base.entity.BaseEntity;
-import com.flowiee.pms.utils.constants.LoyaltyTransactionType;
+import com.flowiee.pms.utilities.enums.LoyaltyTransactionType;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

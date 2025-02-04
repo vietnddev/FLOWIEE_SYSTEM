@@ -6,9 +6,9 @@ import com.flowiee.pms.entity.sales.Order;
 import com.flowiee.pms.entity.sales.OrderDetail;
 import com.flowiee.pms.service.system.MailMediaService;
 import com.flowiee.pms.service.system.SendCustomerNotificationService;
-import com.flowiee.pms.utils.CoreUtils;
-import com.flowiee.pms.utils.OrderUtils;
-import com.flowiee.pms.utils.constants.NotificationType;
+import com.flowiee.pms.utilities.CoreUtils;
+import com.flowiee.pms.utilities.OrderUtils;
+import com.flowiee.pms.utilities.enums.NotificationType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

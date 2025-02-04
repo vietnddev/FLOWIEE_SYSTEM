@@ -6,7 +6,7 @@ import com.flowiee.pms.exception.AppException;
 import com.flowiee.pms.repository.system.ScheduleRepository;
 import com.flowiee.pms.repository.system.ScheduleStatusRepository;
 import com.flowiee.pms.base.service.BaseService;
-import com.flowiee.pms.utils.constants.ScheduleTask;
+import com.flowiee.pms.utilities.enums.ScheduleTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

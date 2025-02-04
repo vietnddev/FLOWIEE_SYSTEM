@@ -13,9 +13,9 @@ import com.flowiee.pms.service.category.CategoryService;
 import com.flowiee.pms.service.system.AccountService;
 import com.flowiee.pms.service.system.LeaveApplicationService;
 import com.flowiee.pms.service.system.MailMediaService;
-import com.flowiee.pms.utils.constants.ErrorCode;
-import com.flowiee.pms.utils.constants.LeaveStatus;
-import com.flowiee.pms.utils.constants.NotificationType;
+import com.flowiee.pms.utilities.enums.ErrorCode;
+import com.flowiee.pms.utilities.enums.LeaveStatus;
+import com.flowiee.pms.utilities.enums.NotificationType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

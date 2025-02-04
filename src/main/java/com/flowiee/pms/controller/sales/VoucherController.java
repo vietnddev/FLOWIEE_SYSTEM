@@ -11,7 +11,7 @@ import com.flowiee.pms.model.dto.VoucherTicketDTO;
 import com.flowiee.pms.model.payload.CreateVoucherReq;
 import com.flowiee.pms.service.sales.VoucherService;
 import com.flowiee.pms.service.sales.VoucherTicketService;
-import com.flowiee.pms.utils.constants.ErrorCode;
+import com.flowiee.pms.utilities.enums.ErrorCode;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AccessLevel;

@@ -1,7 +1,7 @@
 package com.flowiee.pms.config;
 
 import com.flowiee.pms.service.system.impl.UserDetailsServiceImpl;
-import com.flowiee.pms.utils.constants.EndPoint;
+import com.flowiee.pms.utilities.enums.EndPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
